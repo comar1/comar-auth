@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$primary: #00dc82;
+$secondary: #dedcff;
+$accent: #00dc82;
+$green: #b5f5ca;
+$purple: #dbd1ea;
+$background: #020a23;
+$text: #f8f8f9;
+
+body{
+    background-color: #020a23;
+    color: white;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    color: $text;
+    
+    overflow: hidden;
+}
+
+h3{
+    font-size: 20px;
+}
+
+p{
+    margin: 0;
+}
+
+//colors
+@mixin bg-color($color){
+    color: black;
+    background-color: $color;
+    font-weight: 500;
+}
+.bg{
+    color: black;
+    &-green{
+        @include bg-color($color: $green);
+    }
+    &-purple{
+        @include bg-color($color: $purple);
+    }
+}

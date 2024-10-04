@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 40%;
+    //outline: 1px solid red;
+    padding: 0.75rem;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    color: rgb(238, 238, 238);
+}
+.output{
+    @extend .container;
+    color: #4d5c5e;
+    background-color: #d6fae2;
+}

@@ -1,0 +1,72 @@
+.form{
+    height: fit-content;
+    width: 20rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    outline: 1px solid #10b798;
+    margin-bottom: 1rem;
+    h3{
+        text-align: center;
+        width: 100%;
+        margin: 1rem auto;
+    }
+    input{
+        height: 30px;
+        padding: 2px 12px;
+        border-radius: 0.25rem;
+        font-size: 14px;
+        border: none;
+        outline: none;
+        &:focus-visible{
+            outline: 1px solid $primary;
+        }
+    }
+    button{
+        width: 100%;
+        margin: 2rem 0;
+        height: 40px;
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        border: none;
+        background-color: #434965;
+        color: $text;
+        border-radius: 0.25rem;
+        &:hover{
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            cursor: pointer;
+            border: 1px solid white;
+            background-color: #04b36a;
+            color: whitesmoke;
+            transition: border 0.3s, background-color 0.3s, color 0.3s,;
+        }
+    }
+    p{
+        text-align: center;
+        margin: 0;
+        span{
+            color: $accent;
+            &:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
