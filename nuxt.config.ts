@@ -2,7 +2,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  
+  app: {
+    head: {
+      title: 'comar-auth',
+    },
+  },
 	css: [
     // SCSS file in the project
     '~/assets/css/style.scss'

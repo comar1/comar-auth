@@ -13,8 +13,8 @@
       </div>
       <div class="output">
         <b>Client</b>
-        <p>Username:</p>
-        <p>Password:</p>
+        <p>Username: <b>{{ client.username }}</b></p>
+        <p>Password: <b>{{ client.password }}</b></p>
       </div>
     </div>
   </template>
@@ -29,12 +29,20 @@
         headers: ['Details', 'Navigation Structure', 'Assign Pages'],
 
         form: {
+          username: 'comar1',
+          password: 'comar1pass',
+        },
+        client: {
           username: '',
           password: '',
         },
-
         salt: ''
       };
+    },
+    provide(){
+      return {
+        form: this.form,
+      }
     },
     computed: {
         posx() {
@@ -50,16 +58,42 @@
         this.mousey = event.clientY;
       },
       submit(formData) {
-        this.salt = '12345'
-        this.form.password = formData.password;
-        console.log('Form submitted:', formData);
+        //onMount generate new salt
+
+        //for fe only
+
+        this.client.username = this.form.username;
+        this.client.password = this.form.password + this.salt;
+        
+        console.log('Form submitted: '+ this.client.password + ' (password: ' + formData.password + ' + salt: ' +this.salt);
+
+        //reset salt
+        // this.salt = ''
         // Handle the form data (e.g., send it to a server, update the UI, etc.)
       },
+      //Helper Functions
+      generateRandomChars(length){
+        let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const randomArray = new Uint8Array(length); // generate 5 random values
+        crypto.getRandomValues(randomArray);
+
+        const saltArray = [];
+        for (const value of randomArray) {
+          saltArray.push(chars.charAt(value % chars.length));
+        }
+
+        const generatedSalt = saltArray.join("");
+        console.log("salt: " + generatedSalt);
+        return generatedSalt;
+      }
     },
     mounted() {
         this.mousex = 844;
         this.mousey = 446;
         document.addEventListener('mousemove', this.updateMousePosition);
+
+        
+        this.salt = this.generateRandomChars(5);
     },
     unmounted() {
       document.removeEventListener('mousemove', this.updateMousePosition);
