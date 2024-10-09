@@ -7,6 +7,10 @@ export default defineNuxtConfig({
       title: 'comar-auth',
     },
   },
+  server: {
+    host: 'comar-auth',
+    port: 8000,
+  },
 	css: [
     // SCSS file in the project
     '~/assets/css/style.scss'

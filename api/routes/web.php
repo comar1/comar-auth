@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/test', [PasswordAuth::class, 'test']);
+Route::post('/getHash', [PasswordAuth::class, 'getHash']);

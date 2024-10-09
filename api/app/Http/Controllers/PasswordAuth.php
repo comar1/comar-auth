@@ -20,28 +20,27 @@ class PasswordAuth extends Controller
         return $generatedSalt;
     }
 
-    public function test(Request $request)
+    public function getHash(Request $request)
     {
         $data = $request->all();
         $salt = self::generateRandomChars(5);
 
-        $csrfToken = Cache::get('csrf_token');
+        // $csrfToken = Cache::get('csrf_token');
 
-        if ($request->header('X-CSRF-TOKEN') !== $csrfToken) {
-            // Request is invalid
-            return response()->json(['error' => 'Invalid CSRF token'], 401);
-        }
+        // if ($request->header('X-CSRF-TOKEN') !== $csrfToken) {
+        //     // Request is invalid
+        //     return response()->json(['error' => 'Invalid CSRF token'], 401);
+        // }
         //dd($csrfToken);
-
-        $data['username'] = $request->username;
+        
         $data['password'] = $request->password . $salt;
-        // Your authentication logic goes here
+
         // For example, you can return a success message
         return response()->json([
             'server_message' => 'Authentication successful!',
             'message' => 'You have been authenticated successfully.',
             'data' => $data,
-            'token' => $csrfToken
+            'token' => $csrfToken,
         ], 200);
     }
 
