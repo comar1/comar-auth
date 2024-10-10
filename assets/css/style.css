@@ -7,9 +7,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 16px;
+  font-size: 14px;
   color: #f8f8f9;
-  overflow: hidden;
 }
 
 h3 {
@@ -32,6 +31,10 @@ p {
   color: black;
   background-color: #dbd1ea;
   font-weight: 500;
+}
+
+h4 {
+  margin: 0;
 }
 
 .poppins-thin {
@@ -152,6 +155,7 @@ p {
   flex-direction: column;
   gap: 8px;
   outline: 1px solid #10b798;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
 .form h3 {
@@ -223,34 +227,60 @@ p {
   opacity: 0;
 }
 
-.container, .output {
+.container, .server_output, .client_output {
   display: flex;
   flex-direction: column;
   height: -moz-fit-content;
   height: fit-content;
-  width: 40%;
+  min-width: 675px;
   padding: 0.75rem;
   font-weight: 400;
-  border-radius: 0.5rem;
   color: rgb(238, 238, 238);
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  margin: 1rem 0;
+}
+.container b, .server_output b, .client_output b {
+  margin-bottom: 8px;
 }
 
-.output {
-  color: #4d5c5e;
+.client_output {
+  color: #11525c;
   background-color: #d6fae2;
+  border: none;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.server_output {
+  color: #0e2e7a;
+  background-color: #d5e5fc;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.events {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .app {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
+  position: relative;
+  cursor: default;
   height: 100vh;
+  width: 98vw;
+  overflow-y: auto;
 }
 
 .mouse-follower {
-  position: absolute;
+  position: fixed;
   width: 70rem;
   height: 70rem;
   background-color: transparent; /* red background for demo purposes */
@@ -264,4 +294,12 @@ p {
   opacity: 1;
   z-index: -999;
   background: radial-gradient(circle, #041548, rgba(255, 0, 0, 0) 60%);
+}
+
+.mouse-follower-wrapper {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -20;
 }/*# sourceMappingURL=style.css.map */

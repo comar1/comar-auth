@@ -2,15 +2,40 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: 40%;
+    //width: 40%;
+    min-width: 675px;
     //outline: 1px solid red;
     padding: 0.75rem;
     font-weight: 400;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
     color: rgb(238, 238, 238);
+    border-top: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+    margin: 1rem 0;
+    b{
+        margin-bottom: 8px;
+    }
 }
-.output{
+.client_output{
     @extend .container;
-    color: #4d5c5e;
+    color: #11525c;
     background-color: #d6fae2;
+    border: none;
+    border-radius: 0.25rem;
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+.server_output{
+    @extend .container;
+    color: #0e2e7a;
+    background-color: #d5e5fc;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.events{
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }

@@ -17,4 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/getHash', [PasswordAuth::class, 'getHash']);
+Route::get('/test', [PasswordAuth::class, 'test']);
+Route::get('/getHash', [PasswordAuth::class, 'getHash']);
+Route::post('/getSaltedPassword', [PasswordAuth::class, 'getSaltedPassword']);
+Route::post('/getHashedPassword', [PasswordAuth::class, 'getHashedPassword']);
+Route::get('/generateUserID', [PasswordAuth::class, 'generateUserID']);
+Route::post('/account', [PasswordAuth::class, 'account']);
+Route::post('/register', [PasswordAuth::class, 'register']);
