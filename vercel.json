@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "bunfig.toml",
+        "use": "@vercel/static-build"
+      }
+    ]
+  }
